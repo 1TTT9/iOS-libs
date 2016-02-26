@@ -1,6 +1,18 @@
 Practice Example of Swift language
 ========
 
+=======
+## ■ Update 2016/02/26
+
+- auto-update tables  
+1) demo on update UITableViews automatically and periodically  
+2) you can also tap any cell of the tableViews to pause/run the update on them.  
+3) DEMO  
+<p align="center">
+  ![Alt text](https://dl.dropboxusercontent.com/u/23983489/output_automove.gif "Optional title")
+</p>
+
+
 ## ■ Update 2016/02/05
 
 - editable tag list  
