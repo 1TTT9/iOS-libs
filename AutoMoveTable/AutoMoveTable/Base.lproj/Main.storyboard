@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auto Move Table-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="GGAutoMoveTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="GGAutoMoveTable" customModule="AutoMoveTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RsO-3m-rhc">
+                                <rect key="frame" x="0.0" y="0.0" width="197" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ggCellAutoMoveTable" id="kMF-fi-nTd" customClass="GGCellAutoMoveTable" customModule="AutoMoveTable" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="197" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kMF-fi-nTd" id="1aJ-pc-aUR">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Rmx-7l-qOD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="IWo-Wy-qX6"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lcm-Rb-h0z">
+                                <rect key="frame" x="201" y="0.0" width="198" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ggCellAutoMoveTable" id="80d-gw-XHC" customClass="GGCellAutoMoveTable" customModule="AutoMoveTable" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="198" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="80d-gw-XHC" id="eyf-Zr-C3M">
+                                            <rect key="frame" x="0.0" y="0.0" width="198" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="JeK-wA-hYO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YIc-b1-IW2"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KLJ-wI-cc4">
+                                <rect key="frame" x="403" y="0.0" width="197" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ggCellAutoMoveTable" id="TVS-Xe-BN5" customClass="GGCellAutoMoveTable" customModule="AutoMoveTable" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="197" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TVS-Xe-BN5" id="e9u-da-ybh">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="D8F-X6-Guy"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QFj-6l-hhf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KLJ-wI-cc4" firstAttribute="leading" secondItem="Lcm-Rb-h0z" secondAttribute="trailing" constant="4" id="1Ir-K3-pJp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lcm-Rb-h0z" secondAttribute="bottom" id="B3i-ka-5kL"/>
+                            <constraint firstItem="Lcm-Rb-h0z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="BM0-0f-Z47"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KLJ-wI-cc4" secondAttribute="bottom" id="IJp-BQ-rS6"/>
+                            <constraint firstItem="RsO-3m-rhc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Njs-2x-QIO"/>
+                            <constraint firstItem="RsO-3m-rhc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qyu-bG-QE4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RsO-3m-rhc" secondAttribute="bottom" id="b0U-fe-F6u"/>
+                            <constraint firstAttribute="trailing" secondItem="KLJ-wI-cc4" secondAttribute="trailing" id="bdE-FU-QRU"/>
+                            <constraint firstItem="Lcm-Rb-h0z" firstAttribute="width" secondItem="RsO-3m-rhc" secondAttribute="width" id="bwj-Vv-swi"/>
+                            <constraint firstItem="KLJ-wI-cc4" firstAttribute="width" secondItem="RsO-3m-rhc" secondAttribute="width" id="gaw-MI-ZwL"/>
+                            <constraint firstItem="Lcm-Rb-h0z" firstAttribute="leading" secondItem="RsO-3m-rhc" secondAttribute="trailing" constant="4" id="m4C-aC-Vwv"/>
+                            <constraint firstItem="KLJ-wI-cc4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zmf-mZ-7Cv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tb0" destination="RsO-3m-rhc" id="6SV-7L-fLc"/>
+                        <outlet property="tb1" destination="Lcm-Rb-h0z" id="D0g-nH-l3X"/>
+                        <outlet property="tb2" destination="KLJ-wI-cc4" id="5wS-QT-2iH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="387"/>
+        </scene>
+    </scenes>
+</document>
