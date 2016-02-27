@@ -13,7 +13,7 @@ Practice Example of Swift language
 6) DEMO  
 <p align="center">
   ![Alt text](https://dl.dropboxusercontent.com/u/23983489/output_automove2.gif "Optional title")
-</p>  
+</p>
 
 - Update 2016/02/26  
 1) demo on update UITableViews automatically and periodically  
