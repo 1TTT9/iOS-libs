@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GGAutoMoveTable: UIViewController {
+class GGAutoMoveTable: UIViewController, UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var tb0: UITableView!
     @IBOutlet weak var tb1: UITableView!
@@ -18,8 +18,11 @@ class GGAutoMoveTable: UIViewController {
     var tables:[UITableView] = [UITableView]()
     var numOfItems:[Int] = [5,4,3]
     var timers:[GGTimer] = [GGTimer]()
+    var eclipseTimes:[Double] = [2, 1.5, 3.3]
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
 
         let cellXib = UINib(nibName: "GGCellAutoMoveTable", bundle: nil)
@@ -36,7 +39,7 @@ class GGAutoMoveTable: UIViewController {
             timers.append(GGTimer())
             if i == 0 {
                 let j = i
-                timers[j].setUp(5, isRepeated: true, callback: { () -> Void in
+                timers[j].setUp(eclipseTimes[j], isRepeated: true, callback: { () -> Void in
                     self.numOfItems[j] -= 1
                     self.tables[j].deleteRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Top)
                     self.numOfItems[j] += 1
@@ -44,7 +47,7 @@ class GGAutoMoveTable: UIViewController {
                 })
             } else if i == 1 {
                 let j = i
-                timers[j].setUp(3, isRepeated: true, callback: { () -> Void in
+                timers[j].setUp(eclipseTimes[j], isRepeated: true, callback: { () -> Void in
                     self.numOfItems[j] -= 1
                     self.tables[j].deleteRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Top)
                     self.numOfItems[j] += 1
@@ -52,7 +55,7 @@ class GGAutoMoveTable: UIViewController {
                 })
             } else if i == 2 {
                 let j = i
-                timers[j].setUp(8, isRepeated: true, callback: { () -> Void in
+                timers[j].setUp(eclipseTimes[j], isRepeated: true, callback: { () -> Void in
                     self.numOfItems[j] -= 1
                     self.tables[j].deleteRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Top)
                     self.numOfItems[j] += 1
@@ -72,12 +75,15 @@ class GGAutoMoveTable: UIViewController {
         print("can you see me?")
     }
     
-    func delayBySecond(sec:Double, callback:(()->Void)){
-        let delay = sec * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()) {
-            callback()
-        }
+    
+    func popupMenu(callback:(()->Void)?) {
+        //pop-over menu
+        let menuVC:GGPopupMenuViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("GGPopupMenuViewController") as! GGPopupMenuViewController
+        menuVC.modalPresentationStyle = .OverCurrentContext
+        menuVC.modalTransitionStyle = .CrossDissolve
+        menuVC.transitioningDelegate = self
+        menuVC.actionTapToClose = callback
+        self.presentViewController(menuVC, animated: true, completion: nil)
     }
 }
 
@@ -106,13 +112,10 @@ extension GGAutoMoveTable: UITableViewDataSource {
         
         let cellIdentifier:String = "ggCellAutoMoveTable"
         let cell:GGCellAutoMoveTable = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GGCellAutoMoveTable
-        
+    
         let tag = tableView.tag, ggtimer = timers[tag]
-        if ggtimer.isRunning() {
-            cell.bgView.backgroundColor = getRandomColor()
-        } else {
-            cell.bgView.backgroundColor = getRandomColor(0.3)
-        }
+        cell.bgView.backgroundColor = getRandomColor()
+        cell.selectionStyle = .None
         return cell
     }
 }
@@ -127,12 +130,12 @@ extension GGAutoMoveTable: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let tag = tableView.tag, ggtimer = timers[tag]
-        
-        if ggtimer.isRunning() {
-            ggtimer.stop()
-        } else {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! GGCellAutoMoveTable
+        ggtimer.stop()
+        cell.alpha = 0.3
+        self.popupMenu({()->Void in
             ggtimer.run()
-        }
-        tableView.reloadData()
+            cell.alpha = 1.0
+        })
     }
 }

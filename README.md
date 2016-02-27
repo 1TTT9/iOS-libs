@@ -2,15 +2,22 @@ Practice Example of Swift language
 ========
 
 =======
-## ■ Update 2016/02/26
+## ■ Update 2016/02/27
 
 - auto-update tables  
+1) added custom control for UIImageView, keywords [IBInspectable, IBDesignable](http://nshipster.com/ibinspectable-ibdesignable/)  
+2) met [failed to update auto layout status](http://stackoverflow.com/questions/27374330/ibdesignable-error-ib-designables-failed-to-update-auto-layout-status-interf)  
+3) added tap-event on uitableview  
+4) added class for UIColor(hex)  
+5) added custom presentation view (GGPopupMenuViewController)  
+6) DEMO  
+<p align="center">
+  ![Alt text](https://dl.dropboxusercontent.com/u/23983489/output_automove2.gif "Optional title")
+</p>  
+
+- Update 2016/02/26  
 1) demo on update UITableViews automatically and periodically  
 2) you can also tap any cell of the tableViews to pause/run the update on them.  
-3) DEMO  
-<p align="center">
-  ![Alt text](https://dl.dropboxusercontent.com/u/23983489/output_automove.gif "Optional title")
-</p>
 
 
 ## ■ Update 2016/02/05

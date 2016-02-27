@@ -18,8 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hz9-KU-lNM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_ggc" translatesAutoresizingMaskIntoConstraints="NO" id="7dF-Qe-DhM" customClass="GGImageView" customModule="AutoMoveTable" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="26" width="34" height="34"/>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="0kW-RW-xiE"/>
+                                            <constraint firstAttribute="width" constant="34" id="Bye-GY-s11"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircleNeeded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="SGo-87-UbI"/>
+                                    <constraint firstItem="7dF-Qe-DhM" firstAttribute="leading" secondItem="Hz9-KU-lNM" secondAttribute="leading" constant="8" id="fDa-eF-SKb"/>
+                                    <constraint firstAttribute="bottom" secondItem="7dF-Qe-DhM" secondAttribute="bottom" constant="4" id="xz9-Hl-5rR"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RsO-3m-rhc">
-                                <rect key="frame" x="0.0" y="0.0" width="197" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="197" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ggCellAutoMoveTable" id="kMF-fi-nTd" customClass="GGCellAutoMoveTable" customModule="AutoMoveTable" customModuleProvider="target">
@@ -42,7 +64,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lcm-Rb-h0z">
-                                <rect key="frame" x="201" y="0.0" width="198" height="600"/>
+                                <rect key="frame" x="201" y="64" width="198" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ggCellAutoMoveTable" id="80d-gw-XHC" customClass="GGCellAutoMoveTable" customModule="AutoMoveTable" customModuleProvider="target">
@@ -65,7 +87,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KLJ-wI-cc4">
-                                <rect key="frame" x="403" y="0.0" width="197" height="600"/>
+                                <rect key="frame" x="403" y="64" width="197" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ggCellAutoMoveTable" id="TVS-Xe-BN5" customClass="GGCellAutoMoveTable" customModule="AutoMoveTable" customModuleProvider="target">
@@ -91,18 +113,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KLJ-wI-cc4" firstAttribute="leading" secondItem="Lcm-Rb-h0z" secondAttribute="trailing" constant="4" id="1Ir-K3-pJp"/>
+                            <constraint firstItem="Hz9-KU-lNM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6uS-K7-q6K"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lcm-Rb-h0z" secondAttribute="bottom" id="B3i-ka-5kL"/>
                             <constraint firstItem="Lcm-Rb-h0z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="BM0-0f-Z47"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KLJ-wI-cc4" secondAttribute="bottom" id="IJp-BQ-rS6"/>
+                            <constraint firstItem="KLJ-wI-cc4" firstAttribute="top" secondItem="Hz9-KU-lNM" secondAttribute="bottom" id="N1b-T0-unG"/>
                             <constraint firstItem="RsO-3m-rhc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Njs-2x-QIO"/>
                             <constraint firstItem="RsO-3m-rhc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qyu-bG-QE4"/>
+                            <constraint firstItem="RsO-3m-rhc" firstAttribute="top" secondItem="Hz9-KU-lNM" secondAttribute="bottom" id="Stg-f1-hkS"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RsO-3m-rhc" secondAttribute="bottom" id="b0U-fe-F6u"/>
                             <constraint firstAttribute="trailing" secondItem="KLJ-wI-cc4" secondAttribute="trailing" id="bdE-FU-QRU"/>
                             <constraint firstItem="Lcm-Rb-h0z" firstAttribute="width" secondItem="RsO-3m-rhc" secondAttribute="width" id="bwj-Vv-swi"/>
+                            <constraint firstAttribute="trailing" secondItem="Hz9-KU-lNM" secondAttribute="trailing" id="ffd-If-Ufd"/>
                             <constraint firstItem="KLJ-wI-cc4" firstAttribute="width" secondItem="RsO-3m-rhc" secondAttribute="width" id="gaw-MI-ZwL"/>
+                            <constraint firstItem="Lcm-Rb-h0z" firstAttribute="top" secondItem="Hz9-KU-lNM" secondAttribute="bottom" id="i0Z-bw-YYO"/>
                             <constraint firstItem="Lcm-Rb-h0z" firstAttribute="leading" secondItem="RsO-3m-rhc" secondAttribute="trailing" constant="4" id="m4C-aC-Vwv"/>
+                            <constraint firstItem="Hz9-KU-lNM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z9O-8Y-WKv"/>
                             <constraint firstItem="KLJ-wI-cc4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zmf-mZ-7Cv"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Njs-2x-QIO"/>
+                                <exclude reference="BM0-0f-Z47"/>
+                                <exclude reference="zmf-mZ-7Cv"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tb0" destination="RsO-3m-rhc" id="6SV-7L-fLc"/>
@@ -114,5 +149,44 @@
             </objects>
             <point key="canvasLocation" x="305" y="387"/>
         </scene>
+        <!--Popup Menu View Controller-->
+        <scene sceneID="tEv-0k-OPB">
+            <objects>
+                <viewController storyboardIdentifier="GGPopupMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s6D-aN-Bkk" customClass="GGPopupMenuViewController" customModule="AutoMoveTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uR9-Ch-38N"/>
+                        <viewControllerLayoutGuide type="bottom" id="gRn-2T-12T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RvW-fa-bKq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAf-4t-dbF">
+                                <rect key="frame" x="270" y="280" width="60" height="40"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2Vi-HH-5m0"/>
+                                    <constraint firstAttribute="width" constant="60" id="d09-xj-h2I"/>
+                                </constraints>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="onTapClose:" destination="s6D-aN-Bkk" eventType="touchUpInside" id="OkX-Mt-gOG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YAf-4t-dbF" firstAttribute="centerX" secondItem="RvW-fa-bKq" secondAttribute="centerX" id="GJq-aX-546"/>
+                            <constraint firstItem="YAf-4t-dbF" firstAttribute="centerY" secondItem="RvW-fa-bKq" secondAttribute="centerY" id="oHm-md-v30"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fol-PC-BgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944" y="427"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="logo_ggc" width="1000" height="1000"/>
+    </resources>
 </document>
