@@ -2,6 +2,20 @@ Practice Example of Swift language
 ========
 
 =======
+## ■ Update 2016/03/01
+
+- d3view  
+1) a simple demo for interaction bw UIComponent and WebComponent by using UIWebView and Javascript and graph drawn by D3.js  
+2) here I used node(.js) as web server and [set NSAppTransportSecurity as arbitary](http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http) to work around cleartext HTTP problem on iOS.  
+3) event handle bw UIComponent and Javascript can be implemented by re-defining its communication protocol.  
+4) on IOS >~8.0, btter use [WKWebView](http://liuyanwei.jumppo.com/2015/10/17/ios-webView.html) instead of UIView.  
+5) used 3rd-party customized button via Cocoapods.
+6) DEMO  
+<p align="center">
+  <img src="https://dl.dropboxusercontent.com/u/23983489/d3view.png" />
+</p>
+
+
 ## ■ Update 2016/02/27
 
 - auto-update tables  
